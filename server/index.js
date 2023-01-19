@@ -18,7 +18,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 //connect to mongoDB
-const MONGO_URI='mongodb+srv://Yingw:erica2db@cluster0.y06paec.mongodb.net/?retryWrites=true&w=majority';
+const MONGO_URI='mongodb+srv://Yingw:erica2db@cluster0.y06paec.mongodb.net/memories?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose.set('strictQuery', true); //remove deprication warnings

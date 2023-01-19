@@ -13,13 +13,14 @@ export const getPosts = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
-    const post = req.body; // data of post sent from frontend
-    const newPost = new PostMessage(post);
+    const { title, message, selectedFile, creator, tags } = req.body;// data of post sent from frontend
+    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+
     try {
-        await newPost.save();//save data needs time, so async
-        res.status(201).json(newPost);
+        await newPostMessage.save();//save data needs time, so async
+        res.status(201).json(newPostMessage );
     } catch (error) {
-        res.status(409).json({ message: error.message })
+        res.status(409).json({ message: error.message });
     }
 }
 
