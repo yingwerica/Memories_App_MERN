@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 //url pointing to the backend route
-const url = 'http://localhost:5000/posts';
+const url = 'https://memories-app-backend-ifgi.onrender.com/posts';
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
